@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Order Confirmation</title>
+</head>
+<body>
+    <h1>Order Confirmation</h1>
+    <p>Hello {{customerName}},</p>
+    <p>Thank you for your order! Here are your order details:</p>
+    
+    <h2>Order Information</h2>
+    <p>Order ID: {{orderId}}</p>
+    <p>Order Date: {{orderDate}}</p>
+    <p>Status: {{status}}</p>
+
+    <h2>Order Items</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each items}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.quantity}}</td>
+                <td>${{this.price}}</td>
+                <td>${{this.total}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"><strong>Subtotal:</strong></td>
+                <td>${{subtotal}}</td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Shipping:</strong></td>
+                <td>${{shippingCost}}</td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Tax:</strong></td>
+                <td>${{tax}}</td>
+            </tr>
+            <tr>
+                <td colspan="3"><strong>Total:</strong></td>
+                <td>${{total}}</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <h2>Shipping Address</h2>
+    <p>{{shippingAddress.name}}</p>
+    <p>{{shippingAddress.address}}</p>
+    <p>{{shippingAddress.city}}, {{shippingAddress.state}} {{shippingAddress.zipCode}}</p>
+    <p>{{shippingAddress.country}}</p>
+
+    <p>If you have any questions, please contact us.</p>
+    <p>Best regards,<br>{{siteName}} Team</p>
+</body>
+</html> 

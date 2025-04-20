@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Order Status Update</title>
+</head>
+<body>
+    <h1>Order Status Update</h1>
+    <p>Hello {{customerName}},</p>
+    <p>Your order status has been updated:</p>
+    
+    <h2>Order Information</h2>
+    <p>Order ID: {{orderId}}</p>
+    <p>New Status: {{status}}</p>
+    {{#if trackingNumber}}
+    <p>Tracking Number: {{trackingNumber}}</p>
+    {{/if}}
+    {{#if estimatedDelivery}}
+    <p>Estimated Delivery: {{estimatedDelivery}}</p>
+    {{/if}}
+
+    <p>You can view your order details by clicking the link below:</p>
+    <a href="{{orderUrl}}">View Order</a>
+
+    <p>If you have any questions, please contact us.</p>
+    <p>Best regards,<br>{{siteName}} Team</p>
+</body>
+</html> 
